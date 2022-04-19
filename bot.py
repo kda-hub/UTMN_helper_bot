@@ -19,6 +19,27 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
 
+information = {
+
+    "help": 
+"""
+Бот-помошник для студентов
+""",
+    "contacts":
+    """
+Контакты:
+Единый деканат
+что-то
+    """,
+    
+    "ulk-1": 
+    """
+✅УЛК-01 (ИФиЖ) — Институт социально-гуманитарных наук. Ул. Республики, 9, тел.: 59-74-39.
+https://vk.com/csi_ipip
+""",
+}
+
+
 def start_keyboard():
     
     buttons = [
@@ -30,6 +51,7 @@ def start_keyboard():
     keyboard.add(*buttons)
     
     return keyboard
+
 
 def campus_keyboard():
     
@@ -53,10 +75,12 @@ def go_back_keyboard(point):
     
     return keyboard
 
+
 @dp.message_handler(commands="help")
 async def send_welcome(message: types.Message):
 
-    await message.reply("Бот-помошник для студентов")
+    await message.answer(information["help"])
+
 
 @dp.message_handler(commands="start")
 async def start_command(message: types.Message):
@@ -81,14 +105,14 @@ async def send_campus_buttons(call: types.CallbackQuery):
 @dp.callback_query_handler(text="contacts")
 async def send_contacts(call: types.CallbackQuery):
     
-    await call.message.edit_text("Контакты", reply_markup=go_back_keyboard("start_menu"))
+    await call.message.edit_text(information["contacts"], reply_markup=go_back_keyboard("start_menu"))
     await call.answer()
 
 
 @dp.callback_query_handler(text="ulk_1")
 async def send_contacts(call: types.CallbackQuery):
     
-    await call.message.edit_text("Улк-1", reply_markup=go_back_keyboard("campus"))
+    await call.message.edit_text(information["ulk-1"], reply_markup=go_back_keyboard("campus"))
     await call.answer()
 
 
