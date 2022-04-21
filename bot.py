@@ -23,8 +23,14 @@ information = {
 
     "help": 
 """
-Бот-помошник для студентов
+Бот-помощник для студентов.
+
+Этот бот создан для помощи студентам ТюмГу в координации внутри университета.
+
+Список команд:
+/start - запуск бота
 """,
+
     "contacts":
     """
 Контакты:
@@ -33,10 +39,51 @@ information = {
     """,
     
     "ulk-1": 
-    """
-✅УЛК-01 (ИФиЖ) — Институт социально-гуманитарных наук. Ул. Республики, 9, тел.: 59-74-39.
-https://vk.com/csi_ipip
+f"""
+УЛК-01 (ИФиЖ)
+
+Институт социально-гуманитарных наук
+Адрес: Ул. Республики, 9
+Телефон: 59-74-39.
+Группа ВК: https://vk.com/csi_ipip
 """,
+
+    "ulk-3":
+f"""
+УЛК-03 (ИнЗем)
+
+Институт наук о Земле
+Адрес: Ул. Осипенко, 2
+Телефон: 59-74-91
+Группа ВК: https://vk.com/inzemutmn
+""",
+"ulk-4":
+"""
+УЛК-04 (ФЭИ)
+
+Финансово-экономический институт
+Адрес: Ул. Ленина, 16
+Телефон: 59-74-97
+Группа ВК: https://vk.com/fei_media
+""",
+
+"ulk-5":
+"""
+УЛК-05 (ИнХим/ФТИ/ИМиКН)
+Адрес: Ул. Перекопская, 15а
+
+Институт химии
+Телефон: 59-74-67 
+
+Физико-технический институт
+Телефон: 59-74-70 
+Группа ВК: https://vk.com/ifikh
+
+Институт математики и компьютерных наук
+Телефон: 59-77-40
+Группа ВК: https://vk.com/utmn_imikn
+""",
+
 }
 
 
@@ -112,7 +159,7 @@ async def send_contacts(call: types.CallbackQuery):
 @dp.callback_query_handler(text="ulk_1")
 async def send_contacts(call: types.CallbackQuery):
     
-    await call.message.edit_text(information["ulk-1"], reply_markup=go_back_keyboard("campus"))
+    await call.message.edit_text(information["ulk-1"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
     await call.answer()
 
 
