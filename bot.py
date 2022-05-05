@@ -39,51 +39,159 @@ information = {
     """,
     
     "ulk-1": 
-f"""
-УЛК-01 (ИФиЖ)
+"""
+🏢УЛК-01 (ИФиЖ)
+Адрес: Ул. Республики, 9
 
 Институт социально-гуманитарных наук
-Адрес: Ул. Республики, 9
-Телефон: 59-74-39.
+Телефон: 59-74-39
 Группа ВК: https://vk.com/csi_ipip
 """,
 
     "ulk-3":
-f"""
-УЛК-03 (ИнЗем)
+"""
+🏢УЛК-03 (ИнЗем)
+Адрес: Ул. Осипенко, 2
 
 Институт наук о Земле
-Адрес: Ул. Осипенко, 2
 Телефон: 59-74-91
 Группа ВК: https://vk.com/inzemutmn
 """,
+
 "ulk-4":
 """
-УЛК-04 (ФЭИ)
+🏢УЛК-04 (ФЭИ)
+Адрес: Ул. Ленина, 16
 
 Финансово-экономический институт
-Адрес: Ул. Ленина, 16
 Телефон: 59-74-97
 Группа ВК: https://vk.com/fei_media
 """,
 
 "ulk-5":
 """
-УЛК-05 (ИнХим/ФТИ/ИМиКН)
+🏢УЛК-05 (ИнХим/ФТИ/ИМиКН)
 Адрес: Ул. Перекопская, 15а
 
 Институт химии
 Телефон: 59-74-67 
 
+
 Физико-технический институт
 Телефон: 59-74-70 
 Группа ВК: https://vk.com/ifikh
+
 
 Институт математики и компьютерных наук
 Телефон: 59-77-40
 Группа ВК: https://vk.com/utmn_imikn
 """,
 
+"ulk-6":
+"""
+🏢УЛК-06 (ИнБио)
+Адрес: Ул. Пирогова, 3
+
+Институт биологии
+Телефон: 59-74-94
+Группа ВК: https://vk.com/utmn_inbio
+""",
+
+"ulk-7":
+"""
+🏢УЛК-07 (ИФК)
+Адрес: Ул. Пржевальского, 37
+
+Институт физической культуры.
+СК-спортивный корпус.(корпус-1,2) 
+Телефоны: 41-38-88, 41-80-16
+Группа ВК: https://vk.com/ifk.utmn
+""",
+
+"ulk-9":
+"""
+🏢УЛК-09
+Адресс: Ул. Ленина, 6
+
+Спортивный оздоровительный корпус
+""",
+
+"ulk-10":
+"""
+🏢УЛК-10 (ИГиП)
+Адресс: Ул. Ленина, 38
+
+Институт государства и права
+Телефон: 59-74-43
+Группа ВК: https://vk.com/igipgip
+
+🏢УЛК-10/Т9
+Адресс: ул. Тургенева,9
+
+🏢УЛК-10/Р18
+Адресс: ул. Республики,18
+""",
+
+"ulk-11":
+"""
+🏢УЛК-11 (СоцГум)
+Адресс: Ул. Ленина, 23
+
+Институт дистанционного образования
+
+Институт социально-гуманитарных наук
+Телефон: 59-76-79
+https://vk.com/socgum_utmn
+""",
+
+"ulk-12":
+"""
+🏢УЛК-12
+Адресс: Ул. Семакова, 18
+
+Библиотечно–музейный комплекс
+Телефон: 45-63-09
+""",
+
+"ulk-13":
+"""
+🏢УЛК-13
+Адресс: Ул. Барнаульская, 4
+
+ЦВЗС Центр зимних видов спорта
+Телефон: 43-45-62
+""",
+
+"ulk-16":
+"""
+🏢УЛК-16 (ИПип)
+Адресс: Ул. Проезд 9 Мая, 5
+
+Институт психологии и педагогики
+Телефон: 59-75-81
+Группа ВК: https://vk.com/csi_ipip
+""",
+
+"ulk-17":
+"""
+🏢УЛК-17 (X-BIO)
+Адресс: Ул. Володарского 6
+
+Институт экологической и сельскохозяйственной биологии
+Телефон: 59-74-00
+""", 
+
+"ulk-19":
+"""
+🏢УЛК-19 (ШПИ)
+Адресс: Ул. 8 марта 2/1
+
+Школа перспективных исследований
+Телефон: 59-76-58
+
+Политехническая школа
+Телефон: 59-74-00
+"""
 }
 
 
@@ -103,7 +211,20 @@ def start_keyboard():
 def campus_keyboard():
     
     buttons = [
-        types.InlineKeyboardButton(text="УЛК-1", callback_data="ulk_1"),
+        types.InlineKeyboardButton(text="УЛК-1", callback_data="ulk-1"),
+        types.InlineKeyboardButton(text="УЛК-3", callback_data="ulk-3"),
+        types.InlineKeyboardButton(text="УЛК-4", callback_data="ulk-4"),
+        types.InlineKeyboardButton(text="УЛК-5", callback_data="ulk-5"),
+        types.InlineKeyboardButton(text="УЛК-6", callback_data="ulk-6"),
+        types.InlineKeyboardButton(text="УЛК-7", callback_data="ulk-7"),
+        types.InlineKeyboardButton(text="УЛК-9", callback_data="ulk-9"),
+        types.InlineKeyboardButton(text="УЛК-10", callback_data="ulk-10"),
+        types.InlineKeyboardButton(text="УЛК-11", callback_data="ulk-11"),
+        types.InlineKeyboardButton(text="УЛК-12", callback_data="ulk-12"),
+        types.InlineKeyboardButton(text="УЛК-13", callback_data="ulk-13"),
+        types.InlineKeyboardButton(text="УЛК-16", callback_data="ulk-16"),
+        types.InlineKeyboardButton(text="УЛК-17", callback_data="ulk-17"),
+        types.InlineKeyboardButton(text="УЛК-19", callback_data="ulk-19"),
         types.InlineKeyboardButton(text="Назад", callback_data="start_menu")
     ]
     
@@ -156,10 +277,101 @@ async def send_contacts(call: types.CallbackQuery):
     await call.answer()
 
 
-@dp.callback_query_handler(text="ulk_1")
+@dp.callback_query_handler(text="ulk-1")
 async def send_contacts(call: types.CallbackQuery):
     
     await call.message.edit_text(information["ulk-1"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-3")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-3"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-4")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-4"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-5")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-5"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-6")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-6"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-7")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-7"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-9")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-9"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-10")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-10"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-11")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-11"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-12")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-12"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-13")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-13"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-16")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-16"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-17")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-17"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.answer()
+
+
+@dp.callback_query_handler(text="ulk-19")
+async def send_contacts(call: types.CallbackQuery):
+    
+    await call.message.edit_text(information["ulk-19"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
     await call.answer()
 
 
