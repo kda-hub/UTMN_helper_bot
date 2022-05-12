@@ -1,8 +1,10 @@
 import os
 import logging
+import typing
+import re
 
 from dotenv import load_dotenv
-from aiogram import Bot, Dispatcher, executor, types
+from aiogram import Bot, Dispatcher, executor, types, filters
 
 
 # Load API key from .env file
@@ -28,14 +30,14 @@ information = {
 Этот бот создан для помощи студентам ТюмГу в координации внутри университета.
 
 Список команд:
-/start - запуск бота
+/start  - Запуск бота
+/map    - Вывод карты ТюмГу 
 """,
 
     "contacts":
     """
 Контакты:
 Единый деканат
-что-то
     """,
     
     "ulk-1": 
@@ -250,6 +252,12 @@ async def send_welcome(message: types.Message):
     await message.answer(information["help"])
 
 
+@dp.message_handler(content_types=["sticker"])
+async def send_welcome(message: types.Message):
+
+    await message.answer_sticker(sticker="https://raw.githubusercontent.com/TelegramBots/book/master/src/docs/sticker-fred.webp")
+
+
 @dp.message_handler(commands="start")
 async def start_command(message: types.Message):
 
@@ -277,101 +285,17 @@ async def send_contacts(call: types.CallbackQuery):
     await call.answer()
 
 
-@dp.callback_query_handler(text="ulk-1")
+@dp.message_handler(commands="map")
+async def send_contacts(message: types.Message):
+    
+    media = types.InputFile("files/map.jpg")
+    await message.answer_photo(media)
+
+
+@dp.callback_query_handler(filters.Regexp(r'ulk-\d+'))
 async def send_contacts(call: types.CallbackQuery):
     
-    await call.message.edit_text(information["ulk-1"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-3")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-3"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-4")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-4"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-5")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-5"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-6")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-6"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-7")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-7"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-9")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-9"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-10")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-10"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-11")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-11"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-12")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-12"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-13")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-13"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-16")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-16"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-17")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-17"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
-    await call.answer()
-
-
-@dp.callback_query_handler(text="ulk-19")
-async def send_contacts(call: types.CallbackQuery):
-    
-    await call.message.edit_text(information["ulk-19"], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    await call.message.edit_text(information[call.data], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
     await call.answer()
 
 
