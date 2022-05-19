@@ -130,7 +130,6 @@ def go_back_keyboard(point):
 
 
 # SQL
-
 def setup(user_id, language):
 
     if not is_exists(user_id=user_id):
