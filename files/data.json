@@ -1,6 +1,23 @@
 {
   "RU": {
     "help": "\nБот-помощник для студентов.\n\nЭтот бот создан для помощи студентам ТюмГу в координации внутри университета.\n\nСписок команд:\n/start - Запуск бота\n/menu  - Запуск меню\n/lang [EN|RU]  - ВЫбор языка\n/map - Вывод карты ТюмГу \n",
+    "buttons": {
+      "campus": "Корпуса",
+      "contacts": "Контакты",
+      "deans_office": "Единый Деканат",
+      "main_building": "Главный корпус",
+      "selection_committee": "Приемная комиссия",
+      "documentation_service": "Служба документационного обеспечения",
+      "advertising_marketing": "Реклама, маркетинг",
+      "press_service": "Пресс-служба",
+      "accounting_and_finance": "Бухгалтерия и финансы",
+      "information_technology_center": "Центр информационных технологий",
+      "personnel": "Персонал и кадры",
+      "center_olympia": "«Олимпия»",
+      "back": "Назад",
+      "find_info": "Какую информацию вы хотите получить?",
+      "select_campus": "Выберите корпус"
+    },
     "contacts": {
       "contact_press_service": "Пресс-служба \n\n8 (3452) 59-74-48\npress@utmn.ru",
       "contact_main_building": "Главный корпус \n\n625003, г. Тюмень ул. Володарского, 6\n8 (3452) 59-74-29\n8 (3452) 59-75-59(факс)",
@@ -32,17 +49,22 @@
   },
   "EN": {
     "help": "The bot is an assistant for students.\n\nThis bot was created to help UTMN students coordinate within the university.\n\nList of commands:\n/start - Launch the bot\n/menu - Launch the menu\n/lang [EN|RU]  - Language selection\n/map  - Output of the UTMN map",
-    "contacts": {
-      "contact_press_service": "Press Service\n\n8 (3452) 59-74-48\npress@utmn.ru",
-      "contact_main_building": "Main Building \n\n625003, Tyumen, st. Volodarsky, 6\n\n8 (3452) 59-74-29\n8 (3452) 59-75-59 (fax)\n\n\n",
-      "contact_selection_committee": "Selection Committee\n\nRecruiting and Development Center\nTyumen st. Lenina, 16\n8-800-700-05-53\n(call within Russia is free)\n597759@utmn.ru\n\nOpening hours\nMonday - Thursday: from 9:00 to 18:00\nFriday: from 9:00 to 17:00\nSaturday, Sunday: day off\n\nRemote acceptance of documents through a personal account works around the clock, without breaks and weekends.",
-      "contact_deans_office": "Dean's Office\n\nTyumen, st. Semakova, 18, hall 3rd floor\n8 (3452) 59-75-95\ned@utmn.ru\n\nOpening hours:\nMonday - Thursday: from 8:00 to 18:00\nFriday: from 8:00 to 16:45\nSaturday: from 9:00 to 13:00 (without lunch)\nSunday is a day off",
-      "contact_documentation_service": "Documentation Service\n(Correspondence, appeals of citizens, certificates confirming the authenticity of the diploma)\n\n8 (3452) 59-74-29\n8 (3452) 59-75-59 (fax)\ncommon@utmn.ru",
-      "contact_accounting_and_finance": "Accounting and finance\n\n8 (3452) 59-76-76\n12222@utmn.ru",
-      "contact_personnel": "Personnel\n\n8 (3452) 59-74-33\nhr@utmn.ru",
-      "contact_advertising_marketing": "Advertising, Marketing\n\n8 (3452) 59-74-23\nk.s.kargapolova@utmn.ru",
-      "contact_information_technology_center": "Information Technology Center\n\n8 (3452) 597-777\n597777@utmn.ru",
-      "contact_center_olympia": "Multifunctional sports center \"Olympia\"\n\n8 (3452) 597-555"
+    "buttons": {
+      "campus": "Buildings",
+      "contacts": "Contacts",
+      "deans_office": "Unified Dean's Office",
+      "main_building": "Main building",
+      "selection_committee": "Admissions Committee",
+      "documentation_service": "Documentation Support Service",
+      "advertising_marketing": "Advertising, marketing",
+      "press_service": "Press service",
+      "accounting_and_finance": "Accounting and Finance",
+      "information_technology_center": "Information Technology Center",
+      "personnel": "Personnel and personnel",
+      "center_olympia": "Olympia",
+      "back": "Back",
+      "find_info": "What information do you want to get?",
+      "select_campus": "Select the building"
     },
     "campus": {
       "ulk-1": "🏢 ULK-01 (IFIZH)\nAddress: Republic Street, 9\n\nInstitute of Social and Humanitarian Sciences\nPhone: 59-74-39\nVK Group: https://vk.com/csi_ipip",
@@ -59,6 +81,18 @@
       "ulk-16": "🏢 ULK-16 (IPip)\nAddress: Ul. Proezd 9 May, 5\n\nInstitute of Psychology and Pedagogy\nPhone: 59-75-81\nVK Group: https://vk.com/csi_ipip",
       "ulk-17": "🏢 ULK-17 (X-BIO)\nAddress: 6 Volodarsky Street\n\nInstitute of Ecological and Agricultural Biology\nPhone: 59-74-00",
       "ulk-19": "🏢 ULK-19 (SPI)\nAddress: Ul. 8 March 2/1\n\nSchool of Advanced Studies\nPhone: 59-76-58\n\nPolytechnic School\nPhone: 59-74-00"
+    },
+    "contacts": {
+      "contact_press_service": "Press Service\n\n8 (3452) 59-74-48\npress@utmn.ru",
+      "contact_main_building": "Main Building \n\n625003, Tyumen, st. Volodarsky, 6\n\n8 (3452) 59-74-29\n8 (3452) 59-75-59 (fax)\n\n\n",
+      "contact_selection_committee": "Selection Committee\n\nRecruiting and Development Center\nTyumen st. Lenina, 16\n8-800-700-05-53\n(call within Russia is free)\n597759@utmn.ru\n\nOpening hours\nMonday - Thursday: from 9:00 to 18:00\nFriday: from 9:00 to 17:00\nSaturday, Sunday: day off\n\nRemote acceptance of documents through a personal account works around the clock, without breaks and weekends.",
+      "contact_deans_office": "Dean's Office\n\nTyumen, st. Semakova, 18, hall 3rd floor\n8 (3452) 59-75-95\ned@utmn.ru\n\nOpening hours:\nMonday - Thursday: from 8:00 to 18:00\nFriday: from 8:00 to 16:45\nSaturday: from 9:00 to 13:00 (without lunch)\nSunday is a day off",
+      "contact_documentation_service": "Documentation Service\n(Correspondence, appeals of citizens, certificates confirming the authenticity of the diploma)\n\n8 (3452) 59-74-29\n8 (3452) 59-75-59 (fax)\ncommon@utmn.ru",
+      "contact_accounting_and_finance": "Accounting and finance\n\n8 (3452) 59-76-76\n12222@utmn.ru",
+      "contact_personnel": "Personnel\n\n8 (3452) 59-74-33\nhr@utmn.ru",
+      "contact_advertising_marketing": "Advertising, Marketing\n\n8 (3452) 59-74-23\nk.s.kargapolova@utmn.ru",
+      "contact_information_technology_center": "Information Technology Center\n\n8 (3452) 597-777\n597777@utmn.ru",
+      "contact_center_olympia": "Multifunctional sports center \"Olympia\"\n\n8 (3452) 597-555"
     }
   }
 }

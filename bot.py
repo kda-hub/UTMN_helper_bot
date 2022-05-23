@@ -46,11 +46,23 @@ connection.close()
 
 
 # Keyboards
-def start_keyboard():
+def menu_keyboard(language):
 
     buttons = [
-        types.InlineKeyboardButton(text="Корпуса", callback_data="campus"),
-        types.InlineKeyboardButton(text="Контакты", callback_data="contacts")
+        types.InlineKeyboardButton(text=information[language]["buttons"]["campus"], callback_data="campus"),
+        types.InlineKeyboardButton(text=information[language]["buttons"]["contacts"], callback_data="contacts")
+    ]
+
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    keyboard.add(*buttons)
+
+    return keyboard
+
+
+def language_keyboard():
+    buttons = [
+        types.InlineKeyboardButton(text="RU", callback_data = "RU"),
+        types.InlineKeyboardButton(text="EN", callback_data = "EN"),
     ]
 
     keyboard = types.InlineKeyboardMarkup(row_width=2)
@@ -62,22 +74,22 @@ def start_keyboard():
 def campus_keyboard():
 
     buttons = [
-        types.InlineKeyboardButton(text="УЛК-1", callback_data="ulk-1"),
-        types.InlineKeyboardButton(text="УЛК-3", callback_data="ulk-3"),
-        types.InlineKeyboardButton(text="УЛК-4", callback_data="ulk-4"),
-        types.InlineKeyboardButton(text="УЛК-5", callback_data="ulk-5"),
-        types.InlineKeyboardButton(text="УЛК-6", callback_data="ulk-6"),
-        types.InlineKeyboardButton(text="УЛК-7", callback_data="ulk-7"),
-        types.InlineKeyboardButton(text="УЛК-9", callback_data="ulk-9"),
-        types.InlineKeyboardButton(text="УЛК-10", callback_data="ulk-10"),
-        types.InlineKeyboardButton(text="УЛК-11", callback_data="ulk-11"),
-        types.InlineKeyboardButton(text="УЛК-12", callback_data="ulk-12"),
-        types.InlineKeyboardButton(text="УЛК-13", callback_data="ulk-13"),
-        types.InlineKeyboardButton(text="УЛК-16", callback_data="ulk-16"),
-        types.InlineKeyboardButton(text="УЛК-17", callback_data="ulk-17"),
-        types.InlineKeyboardButton(text="УЛК-19", callback_data="ulk-19"),
+        types.InlineKeyboardButton(text="УЛК-1/Building-1", callback_data="ulk-1"),
+        types.InlineKeyboardButton(text="УЛК-3/Building-3", callback_data="ulk-3"),
+        types.InlineKeyboardButton(text="УЛК-4/Building-4", callback_data="ulk-4"),
+        types.InlineKeyboardButton(text="УЛК-5/Building-5", callback_data="ulk-5"),
+        types.InlineKeyboardButton(text="УЛК-6/Building-6", callback_data="ulk-6"),
+        types.InlineKeyboardButton(text="УЛК-7/Building-7", callback_data="ulk-7"),
+        types.InlineKeyboardButton(text="УЛК-9/Building-9", callback_data="ulk-9"),
+        types.InlineKeyboardButton(text="УЛК-10/Building-10", callback_data="ulk-10"),
+        types.InlineKeyboardButton(text="УЛК-11/Building-11", callback_data="ulk-11"),
+        types.InlineKeyboardButton(text="УЛК-12/Building-12", callback_data="ulk-12"),
+        types.InlineKeyboardButton(text="УЛК-13/Building-13", callback_data="ulk-13"),
+        types.InlineKeyboardButton(text="УЛК-16/Building-16", callback_data="ulk-16"),
+        types.InlineKeyboardButton(text="УЛК-17/Building-17", callback_data="ulk-17"),
+        types.InlineKeyboardButton(text="УЛК-19/Building-19", callback_data="ulk-19"),
 
-        types.InlineKeyboardButton(text="Назад", callback_data="start_menu")
+        types.InlineKeyboardButton(text="Назад/Back", callback_data="start_menu")
     ]
 
     keyboard = types.InlineKeyboardMarkup(row_width=1)
@@ -86,31 +98,31 @@ def campus_keyboard():
     return keyboard
 
 
-def contacts_keyboard():
+def contacts_keyboard(language):
 
     buttons = [
         types.InlineKeyboardButton(
-            text="Единый Деканат", callback_data="contact_deans_office"),
+            text=information[language]["buttons"]["deans_office"], callback_data="contact_deans_office"),
         types.InlineKeyboardButton(
-            text="Главный корпус", callback_data="contact_main_building"),
+            text=information[language]["buttons"]["main_building"], callback_data="contact_main_building"),
         types.InlineKeyboardButton(
-            text="Приемная комиссия", callback_data="contact_selection_committee"),
+            text=information[language]["buttons"]["selection_committee"], callback_data="contact_selection_committee"),
         types.InlineKeyboardButton(
-            text="Служба документационного обеспечения", callback_data="contact_documentation_service"),
+            text=information[language]["buttons"]["documentation_service"], callback_data="contact_documentation_service"),
         types.InlineKeyboardButton(
-            text="Пресс-служба", callback_data="contact_press_service"),
+            text=information[language]["buttons"]["press_service"], callback_data="contact_press_service"),
         types.InlineKeyboardButton(
-            text="Реклама, маркетинг", callback_data="contact_advertising_marketing"),
+            text=information[language]["buttons"]["advertising_marketing"], callback_data="contact_advertising_marketing"),
         types.InlineKeyboardButton(
-            text="Бухгалтерия и финансы", callback_data="contact_accounting_and_finance"),
-        types.InlineKeyboardButton(text="Центр информационных технологий",
+            text=information[language]["buttons"]["accounting_and_finance"], callback_data="contact_accounting_and_finance"),
+        types.InlineKeyboardButton(text=information[language]["buttons"]["information_technology_center"],
                                    callback_data="contact_information_technology_center"),
         types.InlineKeyboardButton(
-            text="Персонал и кадры", callback_data="contact_personnel"),
+            text=information[language]["buttons"]["personnel"], callback_data="contact_personnel"),
         types.InlineKeyboardButton(
-            text="«Олимпия»", callback_data="contact_center_olympia"),
+            text=information[language]["buttons"]["center_olympia"], callback_data="contact_center_olympia"),
 
-        types.InlineKeyboardButton(text="Назад", callback_data="start_menu")
+        types.InlineKeyboardButton(text=information[language]["buttons"]["back"], callback_data="start_menu")
     ]
 
     keyboard = types.InlineKeyboardMarkup(row_width=1)
@@ -119,9 +131,9 @@ def contacts_keyboard():
     return keyboard
 
 
-def go_back_keyboard(point):
+def go_back_keyboard(point, language):
 
-    button = types.InlineKeyboardButton(text="Назад", callback_data=point)
+    button = types.InlineKeyboardButton(text=information[language]["buttons"]["back"], callback_data=point)
 
     keyboard = types.InlineKeyboardMarkup(row_width=1)
     keyboard.add(button)
@@ -197,7 +209,7 @@ def get_language(user_id):
 async def send_welcome(message: types.Message):
 
     await message.answer_sticker(sticker="https://raw.githubusercontent.com/TelegramBots/book/master/src/docs/sticker-fred.webp")
-
+    
 
 # Main commands
 
@@ -206,19 +218,18 @@ async def start_command(message: types.Message):
 
     setup(user_id=message.from_user.id, language="RU")
 
-    await message.answer("Бот готов к работе!")
+    await message.answer("Бот готов к работе! Для смены языка напишите /lang\nThe bot is ready to work! To change the language, print /lang")
 
 
 @dp.message_handler(commands="lang")
 async def language_command(message: types.Message):
 
-    language = message.get_args()
+    user_id = message.from_user.id
 
-    if (language == "RU" or language == "EN"):
-        update_language(user_id=message.from_user.id, language=language)
-        await message.answer("Настройка языка завершена")
+    if is_exists(user_id=user_id):
+        await message.answer(text="Выберите язык / Select a language", reply_markup=language_keyboard())
     else:
-        await message.answer("Введите /lang [RU|EN]")
+        await message.answer("Сначала введите команду /start\nFirst enter the command /start")
 
 
 @dp.message_handler(commands="help")
@@ -230,7 +241,7 @@ async def send_welcome(message: types.Message):
         language = get_language(user_id=user_id)
         await message.answer(information[language]["help"])
     else:
-        await message.answer("Сначала введите команду /start")
+        await message.answer("Сначала введите команду /start\nFirst enter the command /start")
 
 
 @dp.message_handler(commands="menu")
@@ -239,9 +250,11 @@ async def menu_command(message: types.Message):
     user_id = message.from_user.id
 
     if is_exists(user_id=user_id):
-        await message.answer("Какую информацию вы хотите получить?", reply_markup=start_keyboard())
+        language = get_language(user_id=user_id)
+
+        await message.answer(text=information[language]["buttons"]["find_info"], reply_markup=menu_keyboard(language=language))
     else:
-        await message.answer("Сначала введите команду /start")
+        await message.answer("Сначала введите команду /start\nFirst enter the command /start")
 
 
 @dp.message_handler(commands="map")
@@ -256,35 +269,59 @@ async def send_contacts(message: types.Message):
 @dp.callback_query_handler(text="start_menu")
 async def start_menu(call: types.CallbackQuery):
 
-    await call.message.edit_text("Какую информацию вы хотите получить?", reply_markup=start_keyboard())
+    language = get_language(user_id=call.from_user.id)
+    await call.message.edit_text(text=information[language]["buttons"]["find_info"], reply_markup=menu_keyboard(language=language))
+    await call.answer()
+
+
+@dp.callback_query_handler(text="RU")
+async def select_language_ru(call: types.CallbackQuery):
+
+    update_language(user_id=call.from_user.id, language="RU")
+    await call.message.answer(text="Выбран русский язык")
+    await call.answer()
+
+
+@dp.callback_query_handler(text="EN")
+async def select_language_ru(call: types.CallbackQuery):
+
+    update_language(user_id=call.from_user.id, language="EN")
+    await call.message.answer(text="English is selected")
     await call.answer()
 
 
 @dp.callback_query_handler(text="campus")
 async def send_campus_buttons(call: types.CallbackQuery):
 
-    await call.message.edit_text("Выберите корпус", reply_markup=campus_keyboard())
+    language = get_language(user_id=call.from_user.id)
+
+    await call.message.edit_text(text=information[language]["buttons"]["select_campus"], reply_markup=campus_keyboard())
     await call.answer()
 
 
 @dp.callback_query_handler(text="contacts")
 async def send_contacts(call: types.CallbackQuery):
 
-    await call.message.edit_text("Какую информацию вы хотите получить?", reply_markup=contacts_keyboard())
+    language = get_language(user_id=call.from_user.id)
+    await call.message.edit_text(text=information[language]["buttons"]["find_info"], reply_markup=contacts_keyboard(language=language))
     await call.answer()
 
 
 @dp.callback_query_handler(filters.Regexp(r'ulk-\d+'))
 async def send_contacts(call: types.CallbackQuery):
 
-    await call.message.edit_text(information[get_language(user_id=call.from_user.id)]["campus"][call.data], reply_markup=go_back_keyboard("campus"), disable_web_page_preview=True)
+    language = get_language(user_id=call.from_user.id)
+
+    await call.message.edit_text(information[language]["campus"][call.data], reply_markup=go_back_keyboard("campus",language=language), disable_web_page_preview=True)
     await call.answer()
 
 
 @dp.callback_query_handler(filters.Regexp(r'contact_[a-z,A-Z]+'))
 async def send_contacts(call: types.CallbackQuery):
 
-    await call.message.edit_text(information[get_language(user_id=call.from_user.id)]["contacts"][call.data], reply_markup=go_back_keyboard("contacts"), disable_web_page_preview=True)
+    language = get_language(user_id=call.from_user.id)
+
+    await call.message.edit_text(information[language]["contacts"][call.data], reply_markup=go_back_keyboard("contacts", language=language), disable_web_page_preview=True)
     await call.answer()
 
 
