@@ -61,8 +61,8 @@ def menu_keyboard(language):
 
 def language_keyboard():
     buttons = [
-        types.InlineKeyboardButton(text="RU", callback_data = "RU"),
-        types.InlineKeyboardButton(text="EN", callback_data = "EN"),
+        types.InlineKeyboardButton(text="🇷🇺RU", callback_data = "RU"),
+        types.InlineKeyboardButton(text="🇬🇧EN", callback_data = "EN"),
     ]
 
     keyboard = types.InlineKeyboardMarkup(row_width=2)
